@@ -4,7 +4,12 @@ from src.models import Ticket, TicketDetail
 
 
 def priority(id: int) -> str:
-    return ["low", "medium", "high"][id % 3]
+    if id % 3 == 0:
+        return "low"
+    elif id % 3 == 1:
+        return "medium"
+    else:
+        return "high"
 
 
 def status(completed: bool) -> str:
